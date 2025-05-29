@@ -1,0 +1,35 @@
+Vertical {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+Horizontal {
+    layout: horizontal;
+    width: 100%;
+    height: auto;
+    min-height: 12;
+    max-height: 12;
+    padding: 0;
+    margin: 0;
+}
+
+.widget-base {
+    border: round #666;
+    border-title-align: left;
+    border-title-color: #b3561d;
+    border-title-background: black;
+    padding: 1 1;
+    width: 1fr;
+    height: 12;
+    min-height: 12;
+    max-height: 12;
+    margin: 0;
+    content-align: left top;
+}
+
+.widget-center-title {
+    border-title-align: center;
+    content-align: center top;
+}
