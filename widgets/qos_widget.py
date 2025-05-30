@@ -3,8 +3,11 @@
 from widgets.base_widget import APIWidget
 
 class QOSWidget(APIWidget):
-    endpoint = "http://localhost:3000/api/performance"
     interval = 5
+
+    def __init__(self, title: str, *, api_base: str, api_password: str, **kwargs):
+        super().__init__(title, api_base=api_base, api_password=api_password, **kwargs)
+        self.endpoint = f"{api_base}/api/performance"
 
     def extract_data(self, json):
         return json['qos']

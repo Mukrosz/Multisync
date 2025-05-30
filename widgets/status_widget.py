@@ -3,8 +3,11 @@
 from widgets.base_widget import APIWidget
 
 class StatusWidget(APIWidget):
-    endpoint = "http://localhost:3000/api/status"
     interval = 10
+
+    def __init__(self, title: str, *, api_base: str, api_password: str, **kwargs):
+        super().__init__(title, api_base=api_base, api_password=api_password, **kwargs)
+        self.endpoint = f"{api_base}/api/status"
 
     def extract_data(self, json):
         return {

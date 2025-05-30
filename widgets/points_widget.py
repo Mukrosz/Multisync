@@ -3,12 +3,12 @@
 from widgets.base_widget import APIWidget
 
 class PointsWidget(APIWidget):
-    endpoint = "http://localhost:3000/api/points"
     interval = 15
 
-    def __init__(self, title: str):
-        super().__init__(title)
+    def __init__(self, title: str, *, api_base: str, api_password: str, **kwargs):
+        super().__init__(title, api_base=api_base, api_password=api_password, **kwargs)
         self.add_class("widget-center-title")
+        self.endpoint = f"{api_base}/api/points"
 
     def extract_data(self, json):
         return {

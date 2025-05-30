@@ -7,29 +7,23 @@ from textual.reactive import reactive
 from httpx import AsyncClient
 from textual import work
 
-CONFIG_PATH = os.path.expanduser("~/.synchronizer-cli/config.json")
-if os.path.exists(CONFIG_PATH):
-    with open(CONFIG_PATH) as f:
-        config = json.load(f)
-    API_PASSWORD = config.get("dashboardPassword", "")
-else:
-    API_PASSWORD = ""
-
 class APIWidget(Static):
     data = reactive({})
     endpoint: str = ""
     interval: int = 10
 
-    def __init__(self, title: str):
-        super().__init__(classes="widget-base")
+    def __init__(self, title: str, *, api_base: str, api_password: str, **kwargs):
+        super().__init__(classes="widget-base", **kwargs)
         self.border_title = title
+        self.endpoint = api_base
+        self._api_password = api_password
 
     def on_mount(self):
         self.update_data()
         self.set_interval(self.interval, self.update_data)
 
-    def get_client(self):
-        return AsyncClient(auth=("", API_PASSWORD), timeout=10)
+    def get_client(self) -> AsyncClient:
+        return AsyncClient(auth=("", self._api_password), timeout=10)
 
     @work(exclusive=True)
     async def update_data(self):
