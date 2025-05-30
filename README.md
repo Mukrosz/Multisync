@@ -1,7 +1,9 @@
 
 ## Description
-A Multisync TUI (Text User Interface) dashboard that monitors multisync server's metrics, QoS.<br/>
+A Multisync TUI (Text User Interface) dashboard that displays and monitors Multisync synchronizer server's metrics, QoS.<br/>
 [Textual framework for python](https://textual.textualize.io/) is used for most of the heavy lifting.<br/><br/>
+Most of the data is pulled via API endpoints as outlined in the [official Multisync synchronize-cli reference](https://github.com/multisynq/synchronizer-cli?tab=readme-ov-file#dashboard-api-port-3000).<br/>
+Data is refreshed at predefined intervals: 5 - 10 seconds<br/>
 
 ![Sample](assets/images/multisync_example1.png)
 
