@@ -1,8 +1,8 @@
 
 ## Description
-A Multisync TUI (Text User Interface) dashboard that displays and monitors Multisync synchronizer server's metrics, QoS.<br/>
+A Multisynq TUI (Text User Interface) dashboard that displays and monitors [Multisynq synchronizer-cli](https://github.com/multisynq/synchronizer-cli) server's metrics, QoS.<br/>
 [Textual framework for python](https://textual.textualize.io/) is used for most of the heavy lifting.<br/><br/>
-Most of the data is pulled via API endpoints as outlined in the [official Multisync synchronize-cli reference](https://github.com/multisynq/synchronizer-cli?tab=readme-ov-file#dashboard-api-port-3000).<br/>
+Most of the data is pulled via API endpoints as outlined in the [official Multisynq synchronize-cli API reference](https://github.com/multisynq/synchronizer-cli?tab=readme-ov-file#dashboard-api-port-3000).<br/>
 Data is refreshed at predefined intervals: 5 - 10 seconds<br/>
 
 ![Sample](assets/images/multisync_example1.png)
@@ -43,14 +43,18 @@ cd dashboard
 ```
 <br/>
 
-> View TUI dashboard for locally operated Multisync server (http://localhost:3000)
+> View TUI dashboard for locally operated synchronizer server (http://localhost:3000)
 ```
 ./dashboard.py
 ```
 <br/>
 
-> View TUI dashboard for remotely operated Multisync server (http://x.x.x.x:3000)
+> View TUI dashboard for remotely operated synchronizer server (http://x.x.x.x:3000)
 
 ```
 ./dashboard.py --server 'http://x.x.x.x:3000'
 ```
+<br/>
+
+## References
+- [Multisynq synchronizer-cli](https://github.com/multisynq/synchronizer-cli)
