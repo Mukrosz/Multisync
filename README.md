@@ -28,11 +28,18 @@ This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
 ```
  python3 -m venv dashboard
 ```
+<br/>
 
 2) Install dependecies
 ```
  pip install requests textual httpx rich
 ```
+<br/>
+
+3) (OPTIONAL) if connecting to a remote server<br/>
+
+Copy /home/username/.synchronizer-cli/config.json from remote server to your local computer and place in ~/.synchronizer-cli/config.json
+<br/>
 
 ## Usage/Examples
 
@@ -44,7 +51,8 @@ cd dashboard
 <br/>
 
 > View TUI dashboard for locally operated synchronizer server (http://localhost:3000)
-Sync name, key, wallet infortmation is pulled from the synchronizer-cli config file (/home/username/.synchronizer-cli/config.json)<br/>
+
+Sync name, key, wallet information is pulled from the synchronizer-cli config file (/home/username/.synchronizer-cli/config.json)<br/>
 ```
 ./dashboard.py
 ```
