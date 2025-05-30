@@ -36,7 +36,7 @@ if os.path.exists(CONFIG_PATH):
         config = json.load(f)
     API_PASSWORD = config.get("dashboardPassword", "")
 else:
-    API_PASSWORD = ""
+    API_PASSWORD = ''
 
 parser = argparse.ArgumentParser(description="Run the Synchronizer TUI Dashboard")
 parser.add_argument("--server", "--s",
@@ -53,10 +53,6 @@ class DashboardApp(App):
     TITLE = "Synchronizer Dashboard TUI"
 
     def compose(self) -> ComposeResult:
-        if not API_PASSWORD:
-            yield Static("[bold red]Error: dashboardPassword not found in config[/bold red]")
-            return
-
         yield Header()
         with Vertical():
             with Horizontal():
