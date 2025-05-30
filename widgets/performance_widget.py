@@ -10,13 +10,13 @@ class PerformanceWidget(APIWidget):
         self.endpoint = f"{api_base}/api/performance"
 
     def extract_data(self, json):
-        p = json['performance']
+        p = json.get('performance', {})
         return {
-            'total': p['totalTraffic'],
-            'sessions': p['sessions'],
-            'in': p['inTraffic'],
-            'out': p['outTraffic'],
-            'users': p['users']
+            'total'    : p.get('totalTraffic'),
+            'sessions' : p.get('sessions'),
+            'in'       : p.get('inTraffic'),
+            'out'      : p.get('outTraffic'),
+            'users'    : p.get('users')
         }
 
     def render_content(self, data):
@@ -24,8 +24,9 @@ class PerformanceWidget(APIWidget):
             return f"[bold red]{data['error']}[/bold red]"
         total_mb = data.get('total', 0) / 1024 / 1024
         return (
-            f"Total Traffic: {total_mb:.2f} MB\n"
-            f"In/Out: {data.get('in', 0)} / {data.get('out', 0)}\n"
-            f"Sessions: {data.get('sessions', 0)}\n"
-            f"Users: {data.get('users', 0)}"
+            f"Total Traffic : {total_mb:.2f} MB\n"
+            f"Sessions      : {data.get('sessions', 0)}\n"
+            f"In Traffic    : {data.get('in', 0)}\n"
+            f"Out Traffic   : {data.get('out', 0)}\n"
+            f"Users         : {data.get('users', 0)}"
         )
