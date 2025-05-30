@@ -36,10 +36,12 @@ This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
 ```
 <br/>
 
-3) (OPTIONAL) if connecting to a remote server<br/>
+3) (**OPTIONAL**) if connecting to a remote server<br/>
 
-Copy /home/username/.synchronizer-cli/config.json from remote server to your local computer and place in ~/.synchronizer-cli/config.json
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy `/home/username/.synchronizer-cli/config.json` from remote server,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to your local computer and place in `~/.synchronizer-cli/config.json`
 <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**NOTE**: this silly logic will be changed/fixed shortly
 
 ## Usage/Examples
 
@@ -59,9 +61,6 @@ Sync name, key, wallet information is pulled from the synchronizer-cli config fi
 <br/>
 
 > View TUI dashboard for remotely operated synchronizer server (http://x.x.x.x:3000)
-
-Copy /home/username/.synchronizer-cli/config.json from remote server to your local computer and place in ~/.synchronizer-cli/config.json
-NOTE: this silly logic will be changed/fixed shortly
 ```
 ./dashboard.py --server 'http://x.x.x.x:3000'
 ```
