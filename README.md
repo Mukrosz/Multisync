@@ -15,6 +15,11 @@ A Multisync TUI (Text User Interface) dashboard that monitors multisync server's
 ## Disclaimer
 This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
 
+## Requirements
+- Linux OS
+- Tested with python3.11/12/13
+
+  
 ## Installation
 
 1) Create python virtual environment
