@@ -3,6 +3,14 @@
 A Multisync TUI (Text User Interface) dashboard that monitors multisync server's metrics, QoS.<br/>
 [Textual framework for python](https://textual.textualize.io/) is used for most of the heavy lifting.<br/><br/>
 
+![Sample](assets/images/multisync_example1.png)
+
+## Features
+- values auto-refresh 
+- auto-resizable widgets with terminal resize 
+- color themes
+- more to come
+
 
 ## Disclaimer
 This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
