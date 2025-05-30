@@ -10,15 +10,21 @@ class QOSWidget(APIWidget):
         self.endpoint = f"{api_base}/api/performance"
 
     def extract_data(self, json):
-        return json['qos']
+        qos = json.get('qos', {})
+        return {
+            'score'        : qos.get('score'),
+            'reliability'  : qos.get('reliability'),
+            'availability' : qos.get('availability'),
+            'efficiency'   : qos.get('efficiency'),
+        }
 
     def render_content(self, data):
         if 'error' in data:
             return f"[bold red]{data['error']}[/bold red]"
         return (
-            f"Score: {data.get('score', '...')}\n"
-            f"Reliability: {data.get('reliability', '...')}\n"
-            f"Availability: {data.get('availability', '...')}\n"
-            f"Efficiency: {data.get('efficiency', '...')}"
+            f"Score        : {data.get('score', 'Loading...')}\n"
+            f"Reliability  : {data.get('reliability', 'Loading...')}\n"
+            f"Availability : {data.get('availability', 'Loading...')}\n"
+            f"Efficiency   : {data.get('efficiency', 'Loading...')}\n"
         )
 
