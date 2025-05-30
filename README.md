@@ -41,7 +41,12 @@ This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy `/home/username/.synchronizer-cli/config.json` from remote server,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to your local computer and place in `~/.synchronizer-cli/config.json`
 <br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**NOTE**: this silly logic will be changed/fixed shortly
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**NOTE**: this silly logic will be changed/fixed shortly<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**TIP**: If connecting to a server outside of your LAN, consider using **SSH Local Port Forwarding** to secure connection, instead of opening ports
+```
+ssh -N -L 3000:localhost:3000 user@remote-server
+```
+<br/>
 
 ## Usage/Examples
 
