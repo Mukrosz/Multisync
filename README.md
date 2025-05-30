@@ -30,7 +30,7 @@ This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
 ```
 <br/>
 
-2) Install dependecies
+2) Install dependencies
 ```
  pip install requests textual httpx rich
 ```
