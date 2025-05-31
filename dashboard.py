@@ -6,6 +6,7 @@ import os
 import sys
 import httpx
 from textual.app import App, ComposeResult
+from textual.binding import Binding
 from textual.containers import Vertical, Horizontal
 from textual.widgets import Header, Footer, Static
 from urllib.parse import urlparse
@@ -51,6 +52,11 @@ validate_server_url(API_BASE)
 class DashboardApp(App):
     CSS_PATH = "dashboard.css"
     TITLE = "Synchronizer Dashboard TUI"
+
+    COMMAND_PALETTE_DISPLAY = "Ctrl+p"
+    BINDINGS = [
+        Binding("ctrl+q", "quit", "Quit", key_display = "Ctrl+q:"),
+    ]
 
     def compose(self) -> ComposeResult:
         yield Header()
