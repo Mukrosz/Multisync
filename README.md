@@ -74,3 +74,4 @@ Sync name, key, wallet information is pulled from the synchronizer-cli config fi
 
 ## References
 - [Multisynq synchronizer-cli](https://github.com/multisynq/synchronizer-cli)
+- [Textual](https://textual.textualize.io/)
