@@ -24,9 +24,9 @@ This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
   
 ## Installation
 
-1) Create python virtual environment
+1) Clone repo
 ```
- python3 -m venv dashboard
+git clone https://github.com/Mukrosz/multisynq-tui-dashboard.git
 ```
 <br/>
 
@@ -50,14 +50,7 @@ ssh -N -L 3000:localhost:3000 user@remote-server
 
 ## Usage/Examples
 
-> Activate virtual environment
-```
-cd dashboard
-. bin/python3
-```
-<br/>
-
-> View TUI dashboard for locally operated synchronizer server (http://localhost:3000)
+View TUI dashboard for locally operated synchronizer server (http://localhost:3000)
 
 Sync name, key, wallet information is pulled from the synchronizer-cli config file (/home/username/.synchronizer-cli/config.json)<br/>
 ```
@@ -65,7 +58,7 @@ Sync name, key, wallet information is pulled from the synchronizer-cli config fi
 ```
 <br/>
 
-> View TUI dashboard for remotely operated synchronizer server (http://x.x.x.x:3000)
+View TUI dashboard for remotely operated synchronizer server (http://x.x.x.x:3000)
 ```
 ./dashboard.py --server 'http://x.x.x.x:3000'
 ```
