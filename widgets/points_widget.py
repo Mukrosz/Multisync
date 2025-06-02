@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
+from rich.align import Align
 from widgets.base_widget import APIWidget
+from rich.panel import Panel
+from rich.columns import Columns
 
 class PointsWidget(APIWidget):
     interval = 15
@@ -23,15 +26,30 @@ class PointsWidget(APIWidget):
         }
 
     def render_content(self, data):
-        if 'error' in data:
+        if "error" in data:
             return f"[bold red]{data['error']}[/bold red]"
-        return (
-            f"Total       : {data.get('total', 0)}\n"
-            f"Today       : {data.get('daily', 0)}\n"
-            f"This Week   : {data.get('weekly', 0)}\n"
-            f"This Month  : {data.get('monthly', 0)}\n"
-            f"Day Streak  : {data.get('streak', 0)}\n"
-            f"Global Rank : {data.get('rank', 0)}\n"
-            f"Multiplier  : {data.get('multiplier', 0)}"
-        )
 
+        mappings = [
+            ("Total",       data.get("total", 0)),
+            ("Today",       data.get("daily", 0)),
+            ("This Week",   data.get("weekly", 0)),
+            ("This Month",  data.get("monthly", 0)),
+            ("Day Streak",  data.get("streak", 0)),
+            ("Global Rank", data.get("rank", 0)),
+            ("Multiplier",  data.get("multiplier", 0)),
+        ]
+
+        panels = []
+        for label, value in mappings:
+            centered_value = Align(str(value), align="center", vertical="middle")
+            panels.append(
+                Panel(
+                    centered_value, 
+                    title        = f"[#6272a4]{label}[/]",
+                    expand       = True,
+                    border_style = "#666666",
+                    title_align  = "center",
+                )
+            )
+
+        return Columns(panels, expand=True)
