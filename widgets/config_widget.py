@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from dateutil import parser
 from widgets.base_widget import Static
 import socket
 import platform
@@ -19,13 +20,15 @@ class ConfigWidget(Static):
         wallet      = self.config.get('wallet', 'N/A')
         hostname    = socket.gethostname()
         os_platform = platform.architecture()
+        os_name     = platform.system()
+        arch        = platform.architecture()[0]
 
         content = (
             f"Sync Name : {sync_hash}\n"
             f"Sync Key  : {key}\n"
             f"Wallet    : {wallet}\n"
             f"Hostname  : {hostname}\n"
-            f"Platform  : {os_platform}\n"
+            f"Platform  : {os_name} {arch}\n"
         )
         self.update(content)
 
