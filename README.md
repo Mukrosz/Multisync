@@ -32,7 +32,7 @@ git clone https://github.com/Mukrosz/multisynq-tui-dashboard.git
 
 2) Install dependencies
 ```
- pip install requests textual httpx rich
+ pip install requests textual httpx rich python-dateutil
 ```
 <br/>
 
