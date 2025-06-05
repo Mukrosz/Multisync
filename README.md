@@ -19,7 +19,7 @@ This is a work in progress-hobby project. Errors, bugs are expected.<br/><br/>
 
 ## Requirements
 - Linux OS
-- Tested with python3.11/12/13
+- Tested with python3.9 - 3.13
 
   
 ## Installation
