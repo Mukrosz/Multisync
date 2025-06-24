@@ -78,7 +78,7 @@ def make_arg_parser() -> argparse.ArgumentParser:
     p.add_argument("--host", default="localhost", help="API host (default: localhost)")
     p.add_argument("--api-port", type=int, default=3000, help="Port exposing /api/*")
     p.add_argument("--metrics-port", type=int, default=3001, help="Port exposing /metrics")
-    p.add_argument("--password", default=None, help="HTTP basic password")
+    p.add_argument("--password", default=None, help="Web service password")
     return p
 
 
@@ -140,8 +140,8 @@ class DashboardApp(App):
                 )
             # Row 3
             yield PointsWidget("Points",
-                               api_base=self._api_base,
-                               api_password=self._password)
+                api_base=self._api_base,
+                api_password=self._password)
         yield Footer()
 # ---------------------------------------------------------------------- #
 # Entrypoint
