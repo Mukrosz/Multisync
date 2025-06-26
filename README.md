@@ -37,7 +37,7 @@ git clone https://github.com/Mukrosz/multisynq-tui-dashboard.git
 <br/>
 
 3) (**OPTIONAL**) if connecting to a remote server<br/>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you prefer not to use the --password argument, you may:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copy `/home/username/.synchronizer-cli/config.json` from remote server,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to your local computer and place in `~/.synchronizer-cli/config.json`
 <br/>
@@ -51,16 +51,20 @@ ssh -N -L 3000:localhost:3000 user@remote-server
 ## Usage/Examples
 
 View TUI dashboard for locally operated synchronizer server (http://localhost:3000)
-
-Sync name, key, wallet information is pulled from the synchronizer-cli config file (/home/username/.synchronizer-cli/config.json)<br/>
 ```
-./dashboard.py
+./dashboard.py --password 'web-password'
 ```
 <br/>
 
 View TUI dashboard for remotely operated synchronizer server (http://x.x.x.x:3000)
 ```
-./dashboard.py --server 'http://x.x.x.x:3000'
+./dashboard.py --server 'x.x.x.x' --password 'web-password'
+```
+<br/>
+
+Change API and Web ports:
+```
+./dashboard.py --server 'x.x.x.x' --api-port 4000 --metrics-port 4001 --password 'web-password'
 ```
 
 <br/>
