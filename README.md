@@ -62,7 +62,7 @@ View TUI dashboard for remotely operated synchronizer server (http://x.x.x.x:300
 ```
 <br/>
 
-Change API and Web ports:
+Change API and Web ports(default is 3000/3001):
 ```
 ./dashboard.py --server 'x.x.x.x' --api-port 4000 --metrics-port 4001 --password 'web-password'
 ```
